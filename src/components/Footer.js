@@ -5,9 +5,9 @@ function footer() {
     return (
         <>
             <div className="footer-container">
-                <hr />
                 <p>Capstone III - Online Pet Breeding Portal</p>
                 <p>2021 - GROUP III</p>
+                <a href="https://web.facebook.com/rolandoallan.ahitolazo/">Rolando Allan Ahito Jr.</a>
             </div>
         </>
     )

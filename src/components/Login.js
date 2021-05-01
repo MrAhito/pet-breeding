@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react'
 import * as aiIcons from 'react-icons/cg'
-import * as faIcons from 'react-icons/fa'
 import { Link, useHistory } from "react-router-dom";
 import './Login.css'
 import { auth } from '../firebase/firebase';
+import RegUserForm from './RegUserForm';
 
 function Login() {
     const emailRef = useRef();
     const passRef = useRef();
     const history = useHistory();
+
     const [validate, setValid] = useState();
     const [showReg, setshowReg] = useState(false);
     const sh = () => setshowReg(!showReg);
@@ -21,8 +22,9 @@ function Login() {
             console.log(user)
             history.push('/dashboard');
         }).catch(err => {
-            console.log(err)
-            if (err.code == 'auth/invalid-email') {
+            if (err.code == 'auth/network-request-failed') {
+                setValid("Establishing Internet Connection Failed");
+            } else if (err.code == 'auth/invalid-email') {
                 setValid("No Account Found");
             } else if (err.code == 'auth/wrong-password') {
                 setValid("Incorrect Password");
@@ -54,30 +56,14 @@ function Login() {
                 <div className="reg-header-continer">
 
                     <div className="reg-heder">
-                        <Link to='' className='exitBtn' onClick={sh}>
+                        <Link to='' className='exitBtn' type='reset' onClick={sh}>
                             <aiIcons.CgClose />
                         </Link>
                         <h1 className='tittle-reeg'>Register</h1>
                     </div>
-
-                    <div className="reg-form-control">
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' className='txt Fnme' id="txtFname" />
-                        <input type="text" name="txt-Lnme" placeholder='Last Name:' className='txt Lnme' id="txtLname" />
-                        <input type="text" name="txt-Emai" placeholder='Email Address:' className='txt EmailtxT' id="txtEmails" />
-                        <input type="password" name="txt-Pwor" placeholder='Password:' className='txt PassworD' id="txtPword" />
-                        <input type="tel" name="txt-Cnum" placeholder='Contact Number:' className='txt CnuM' id="txtCnum" />
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' className='txt Fnme' id="txtFname" />
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' className='txt Fnme' id="txtFname" />
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' className='txt Fnme' id="txtFname" />
-                        <input type="text" name="txt-Fnme" placeholder='First Name:' className='txt Fnme' id="txtFname" />
-                    </div>
-
-                    <div className="reg-footer">
-                        <button>SIGN UP</button>
-                    </div>
+                    <RegUserForm />
                 </div>
             </div>
-
         </>
     )
 }

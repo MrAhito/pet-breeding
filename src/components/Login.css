@@ -38,10 +38,10 @@ font-size: 1.5vw;
     border-radius: .5vw;
     border: .3vh solid #c8c7d1;
     font-size: 2vh;
-    padding-left: 2vh;
+    padding: .3vh 2vh;
     background-color: transparent;
     outline: none;
-    margin-bottom:  1.7vh;
+    margin: .84vh ;
     transition: all 0.2s ease-in-out;
 }
 .txt:focus, .txt:hover{
@@ -74,11 +74,17 @@ font-size: 1.5vw;
     width: 100%;
     size: .1vh;
 }
-.btn-submit:hover, .btn-reg{
+.btn-submit:hover, .btn-sub:hover, .btn-reg{
     transition: all 0.2s ease-in-out;
     border: .33vh solid var(--primaryColor);
     color: var(--primaryColor);
     background-color: transparent;
+}
+.btn-sub{
+    width: 12vw;
+    margin: 1vh 2vw ;
+    height: 6.5vh;
+    text-align: center;
 }
 #btn-sub{
     font: size 10rem;
@@ -106,7 +112,7 @@ font-size: 1.5vw;
     width: 4.2vh;
     outline: none;
     height: 4.2vh;
-    margin: .7vh;
+    margin:  auto 1.5vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -131,10 +137,82 @@ font-size: 1.5vw;
     box-shadow: -5px 8px 25px 2px #c8c7d1;
     flex-direction: column;
 }
-.reg-heder, .reg-footer{
+.valida{
     display: flex;
-    height: 10%;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    color:transparent;
+    font-size: 1.4vw;
+}
+.valida.sh{
+    color: #ca2c2c;
+}
+.reg-form-c.show{
+    display: flex;
+    flex-direction: column;
+}
+.reg-form-c{
+    display: none;
+}
+.pet-reg input{
+    margin: .75vh 0 .75vh 0;
+}
+
+#txtEmails, #txtAddr, #txtPword{
+grid-column: 1/4;
+}
+#txtCnum, #txtGend,#txtFname, #txtAnme{
+    width: 11.5vw;
+}
+#txtGend{
+    height: 6vh;
+    width: 13.28vw;
+    margin: .75vh 0 .75vh 0;
+}
+.txt.show{
+    display: none;
+}
+.reg-footer{
+    border-top: .3vh solid #c8c7d1;
+    height: 15vh;
+    display: flex;
+    position: fixed;
+    width: 35vw;
+    bottom: 10vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pet-reg{
+    padding: 2.5vh 0 3% 1.25vw;
+    margin: -28vh  1vw 3% 3%;
+    border-radius: .8vw;
+    border: .3vh solid #b9b8c2;
+    display: grid;
+    grid-template-columns: 1fr 1.6vw 1fr 1.6vw;
+
+}
+.pet-title{
+margin:-3.89vh 0 1vh -0.6vw;
+grid-column: 1/5;
+}
+.pet-title h1{
+    font-size: 1.6vw;
+    width: 13.5vw;
+    padding: .2vh;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+}
+
+.reg-heder{ 
+    position: fixed;
+    display: flex;
+    top: 8.5vh;
+    width: 35vw;
+    height: 8.5vh;
     flex-direction: row-reverse;
     border-bottom: .3vh solid #c8c7d1;
 }
@@ -143,22 +221,6 @@ font-size: 1.5vw;
     margin: auto;
     color: var(--primaryColor);
 }
-.reg-form-control{
-    height: 70%;
-    padding: 5% 7%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    overflow: scroll;
-    column-gap: 4vh;
-    overflow-x: hidden;
-
-}
-.EmailtxT, .PassworD{
-grid-column: 1/3;
-}
-.reg-footer{
-    border-top: .3vh solid #c8c7d1;
-    height: 20%;
-
+.fixs{
+    margin-top:-1.6vh;
 }
