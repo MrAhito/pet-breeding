@@ -155,6 +155,7 @@ function RegUserForm() {
                         <div className={errGen ? 'valida sh' : 'valida'}>
                             <faIcons.FaExclamationCircle></faIcons.FaExclamationCircle>
                         </div>
+                        <div></div>
                     </div>
                 </div>
                 <div className="reg-footer">
