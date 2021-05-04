@@ -164,9 +164,9 @@ grid-column: 1/4;
 #txtCnum, #txtGend,#txtFname, #txtAnme{
     width: 11.5vw;
 }
-#txtGend{
+.pet-reg select{
     height: 6vh;
-    width: 13.28vw;
+    width: 13.6vw;
     margin: .75vh 0 .75vh 0;
 }
 .txt.show{
